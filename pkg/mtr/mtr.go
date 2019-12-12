@@ -25,7 +25,7 @@ type MTR struct {
 	maxHops        int
 	maxUnknownHops int
 	ptrLookup      bool
-	subIdentifier  int // Support 0 to 15. This will be the first 4 bits of ICMP sequence number.
+	subIdentifier  int // Support 0 to 63. This will be the first 6 bits of ICMP sequence number.
 }
 
 func NewMTR(addr, srcAddr string, timeout time.Duration, interval time.Duration,

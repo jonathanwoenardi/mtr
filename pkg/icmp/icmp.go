@@ -232,5 +232,5 @@ func listenForSpecific4(conn *icmp.PacketConn, deadline time.Time, neededPeer st
 }
 
 func getNewSeq(seq, subIdentifier int) (newSeq int) {
-	return (subIdentifier << 12) | (seq & ((1 << 12) - 1)) // currently hard coded
+	return (subIdentifier << 10) | (seq & ((1 << 10) - 1)) // the first 6 bits are for subIdentifier
 }
